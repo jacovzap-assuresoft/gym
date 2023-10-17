@@ -11,13 +11,18 @@ public class Discipline
         this.name = name;
     }
 
+    public String getName()
+    {
+        return name;
+    }
+
+        public List<Group> getGroups()
+    {
+        return groups;
+    }
+
     public void addGroup(Group group)
     {
         groups.add(group);
-    }
-
-    public List<Group> getGroups()
-    {
-        return groups;
     }
 }

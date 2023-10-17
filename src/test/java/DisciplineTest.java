@@ -1,19 +1,30 @@
 import org.junit.Test;
 import org.mockito.Mockito;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.hamcrest.CoreMatchers.instanceOf;
+import static org.junit.Assert.assertThat;
 
-public class DisciplineTest {
-
+public class DisciplineTest
+{
     @Test
-    public void testAddGroup() {
-        Discipline discipline = new Discipline("Yoga");
-        Group group = Mockito.mock(Group.class);
-        discipline.addGroup(group);
-        assertEquals(1, discipline.getGroups().size());
+    public void testConstructor()
+    {
+        Discipline discipline = new Discipline("Spinning");
+        assertNotNull(discipline);
+        assertThat(discipline, instanceOf(Discipline.class));
     }
 
     @Test
-    public void testGetGroups() {
+    public void testGetName()
+    {
+        Discipline discipline = new Discipline("Zumba");
+        assertEquals("Zumba", discipline.getName());
+    }
+
+    @Test
+    public void testGetGroups()
+    {
         Discipline discipline = new Discipline("Crossfit");
 
         Group firstGroup = Mockito.mock(Group.class);
@@ -22,5 +33,14 @@ public class DisciplineTest {
         discipline.addGroup(firstGroup);
         discipline.addGroup(secondGroup);
         assertEquals(2, discipline.getGroups().size());
+    }
+
+    @Test
+    public void testAddGroup()
+    {
+        Discipline discipline = new Discipline("Yoga");
+        Group group = Mockito.mock(Group.class);
+        discipline.addGroup(group);
+        assertEquals(1, discipline.getGroups().size());
     }
 }
