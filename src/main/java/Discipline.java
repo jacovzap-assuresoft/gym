@@ -15,4 +15,9 @@ public class Discipline
     {
         groups.add(group);
     }
+
+    public List<Group> getGroups()
+    {
+        return groups;
+    }
 }

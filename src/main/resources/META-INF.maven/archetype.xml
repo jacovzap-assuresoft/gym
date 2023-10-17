@@ -1,0 +1,9 @@
+<archetype>
+  <id>test</id>
+  <sources>
+    <source>src/main/java/Gym.java</source>
+  </sources>
+  <!-- <testSources>
+    <source>src/test/java/AppTest.java</source>
+  </testSources> -->
+</archetype>
