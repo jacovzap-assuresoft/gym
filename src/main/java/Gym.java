@@ -44,7 +44,7 @@ public class Gym {
         group3.checkAttendance();
 
         // Calculate the average age of the group 2
-        System.out.println("The average age of the group 2 is: " + group2.calculateTheAverageAgeOfMembers());
+        System.out.println("The average age of the group 2 is: " + group2.calculateMembersAverageAge());
 
         // Filter all the male gym members
         System.out.println("All the male gym members:");

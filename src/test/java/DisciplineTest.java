@@ -8,10 +8,16 @@ import static org.junit.Assert.assertThat;
 public class DisciplineTest
 {
     @Test
-    public void testConstructor()
+    public void testConstructorNotNull()
     {
         Discipline discipline = new Discipline("Spinning");
         assertNotNull(discipline);
+    }
+
+    @Test
+    public void testConstructorInstance()
+    {
+        Discipline discipline = new Discipline("Spinning");
         assertThat(discipline, instanceOf(Discipline.class));
     }
 
@@ -26,12 +32,12 @@ public class DisciplineTest
     public void testGetGroups()
     {
         Discipline discipline = new Discipline("Crossfit");
-
         Group firstGroup = Mockito.mock(Group.class);
         Group secondGroup = Mockito.mock(Group.class);
 
         discipline.addGroup(firstGroup);
         discipline.addGroup(secondGroup);
+
         assertEquals(2, discipline.getGroups().size());
     }
 
@@ -40,7 +46,9 @@ public class DisciplineTest
     {
         Discipline discipline = new Discipline("Yoga");
         Group group = Mockito.mock(Group.class);
+
         discipline.addGroup(group);
+
         assertEquals(1, discipline.getGroups().size());
     }
 }

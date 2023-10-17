@@ -11,6 +11,12 @@ public class MemberTest
     {
         Member member = new Member("Daniel", "Perez", "male", 22);
         assertNotNull(member);
+    }
+
+    @Test
+    public void testConstructorInstance()
+    {
+        Member member = new Member("Daniel", "Perez", "male", 22);
         assertThat(member, instanceOf(Member.class));
     }
 

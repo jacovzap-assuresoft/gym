@@ -31,7 +31,7 @@ public abstract class Group
     }
 
     // calculate the average age of the members, format it to 1 decimal places and return it
-    public double calculateTheAverageAgeOfMembers()
+    public double calculateMembersAverageAge()
     {
         int sumOfAges = members
         .stream()
