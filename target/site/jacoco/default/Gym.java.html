@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Gym.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Archetype - gym-project</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">Gym.java</span></div><h1>Gym.java</h1><pre class="source lang-java linenums">import java.util.List;
+import java.util.ArrayList;
+
+<span class="nc" id="L4">public class Gym {</span>
+    public static void main(String[] args)
+    {
+        // Create gym members
+<span class="nc" id="L8">        Member member1 = new Member(&quot;Joan&quot;, &quot;Adams&quot;, &quot;male&quot;, 20);</span>
+<span class="nc" id="L9">        Member member2 = new Member(&quot;Jane&quot;, &quot;Brown&quot;, &quot;female&quot;, 22);</span>
+<span class="nc" id="L10">        Member member3 = new Member(&quot;Paul&quot;, &quot;Smith&quot;, &quot;male&quot;, 27);</span>
+<span class="nc" id="L11">        Member member4 = new Member(&quot;Maria&quot;, &quot;Wilson&quot;, &quot;female&quot;, 26);</span>
+<span class="nc" id="L12">        Member member5 = new Member(&quot;Rose&quot;, &quot;Davies&quot;, &quot;female&quot;, 26);</span>
+<span class="nc" id="L13">        Member member6 = new Member(&quot;Peter&quot;, &quot;Johnson&quot;, &quot;male&quot;, 30);</span>
+
+<span class="nc" id="L15">        List&lt;Member&gt; memberList = new ArrayList&lt;&gt;(List.of(member1, member2, member3, member4, member5, member6));</span>
+
+        // Create Disciplines
+<span class="nc" id="L18">        Discipline discipline1 = new Discipline(&quot;Crossfit&quot;);</span>
+
+        // Create groups
+<span class="nc" id="L21">        Open group1 = new Open(6, 7);</span>
+<span class="nc" id="L22">        Open group2 = new Open(7, 8);</span>
+<span class="nc" id="L23">        Controlled group3 = new Controlled(8, 9);</span>
+
+        // Assign members to groups
+<span class="nc" id="L26">        group1.addMember(member1);</span>
+<span class="nc" id="L27">        group1.addMember(member2);</span>
+
+<span class="nc" id="L29">        group2.addMember(member3);</span>
+<span class="nc" id="L30">        group2.addMember(member4);</span>
+
+<span class="nc" id="L32">        group3.addMember(member3);</span>
+<span class="nc" id="L33">        group3.addMember(member4);</span>
+<span class="nc" id="L34">        group3.addMember(member5);</span>
+<span class="nc" id="L35">        group3.addMember(member6);</span>
+
+        // Assign groups to disciplines
+<span class="nc" id="L38">        discipline1.addGroup(group1);</span>
+<span class="nc" id="L39">        discipline1.addGroup(group2);</span>
+<span class="nc" id="L40">        discipline1.addGroup(group3);</span>
+
+        // Check attendance of 3rd group in the class of crossfit
+<span class="nc" id="L43">        System.out.println(&quot;Checking attendance of group 3...&quot;);</span>
+<span class="nc" id="L44">        group3.checkAttendance();</span>
+
+        // Calculate the average age of the group 2
+<span class="nc" id="L47">        System.out.println(&quot;The average age of the group 2 is: &quot; + group2.calculateTheAverageAgeOfMembers());</span>
+
+        // Filter all the male gym members
+<span class="nc" id="L50">        System.out.println(&quot;All the male gym members:&quot;);</span>
+
+<span class="nc" id="L52">        memberList.stream()</span>
+<span class="nc" id="L53">            .filter(member -&gt; &quot;male&quot;.equals(member.getGender()))</span>
+<span class="nc" id="L54">            .forEach(member -&gt; System.out.println(member.getFullName()));</span>
+
+        // Filter all the gym members that are older than 25 years old
+<span class="nc" id="L57">        System.out.println(&quot;All the gym members that are older than 25 years old:&quot;);</span>
+<span class="nc" id="L58">        memberList.stream()</span>
+<span class="nc bnc" id="L59" title="All 2 branches missed.">            .filter(member -&gt; member.getAge() &gt; 25)</span>
+<span class="nc" id="L60">            .forEach(member -&gt; System.out.println(member.getFullName()));</span>
+<span class="nc" id="L61">    }</span>
+}
+
+// PROBLEM STATEMENT
+
+// A gym wants a computerized system to control and monitor the sports
+// disciplines offered to its members.
+// The same discipline can have several groups at different times.
+// The members can choose the disciplines and register to one or more groups.
+
+// There are two types of groups:
+// - Free, with a limit of 20 members.
+// - Controlled, has a quota limit of 20 members whose attendance is controlled.
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

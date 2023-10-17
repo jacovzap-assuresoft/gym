@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="4" failures="0" name="DisciplineTest" time="0.479" errors="0" skipped="0">
+<testsuite tests="4" failures="0" name="DisciplineTest" time="1.223" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="19.0.2+7-Ubuntu-0ubuntu322.04"/>
@@ -42,7 +42,7 @@
     <property name="java.class.path" value="/usr/share/maven/boot/plexus-classworlds-2.x.jar"/>
     <property name="java.vm.specification.version" value="19"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher test"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean install"/>
     <property name="java.home" value="/usr/lib/jvm/java-19-openjdk-amd64"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
@@ -57,8 +57,8 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.endian" value="little"/>
   </properties>
-  <testcase classname="DisciplineTest" name="testAddGroup" time="0.477"/>
+  <testcase classname="DisciplineTest" name="testAddGroup" time="1.22"/>
   <testcase classname="DisciplineTest" name="testGetName" time="0"/>
   <testcase classname="DisciplineTest" name="testGetGroups" time="0"/>
-  <testcase classname="DisciplineTest" name="testConstructor" time="0.002"/>
+  <testcase classname="DisciplineTest" name="testConstructor" time="0.003"/>
 </testsuite>
